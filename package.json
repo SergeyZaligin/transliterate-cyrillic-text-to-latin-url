@@ -22,12 +22,12 @@
     "name": "Sergey Zaligin"
   },
   "bugs": {
-    "url": "https://github.com/SergeyZaligin/transliterate-url-cyr-to-latin.git/issues"
+    "url": "https://github.com/SergeyZaligin/transliterate-cyrillic-text-to-latin-url.git/issues"
   },
   "bundleDependencies": false,
   "deprecated": false,
   "description": "Module for transliteration of cyrillic text into latin under the rules of ISO 9",
-  "homepage": "https://github.com/SergeyZaligin/transliterate-url-cyr-to-latin.git#readme",
+  "homepage": "https://github.com/SergeyZaligin/transliterate-cyrillic-text-to-latin-url.git#readme",
   "keywords": [
     "transliterate",
     "url",
@@ -43,10 +43,10 @@
   "name": "transliterate-url-cyr-to-latin",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SergeyZaligin/transliterate-url-cyr-to-latin.git"
+    "url": "git+https://github.com/SergeyZaligin/transliterate-cyrillic-text-to-latin-url.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.0.1"
+  "version": "1.0.0"
 }
