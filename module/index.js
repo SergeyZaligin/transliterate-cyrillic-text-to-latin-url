@@ -1,8 +1,9 @@
 'use strict';
 
 (function(){
-  const root = this;
-  const prev_module = root.transliterate;
+    
+  const that = this;
+  const prev_module = that.transliterate;
 
   const library = {
     'A': 'А',
@@ -83,17 +84,24 @@
     ' ': '-'
   };
 
-  const transliterate = (string) => {
-    string = string.replace(/зг/gi, 'zgh');
+  const transliterate = (str) => {
+
+    const string = str.replace(/зг/gi, 'zgh');
+    var pre = string.trim();
     let result = '';
-    for(let i = 0; i < string.length; i++){
-      result += library[string[i]] || library[string[i]] === '' ? library[string[i]] : string[i];
+    let cnt = pre.length;
+
+    for(let i = 0; i < cnt; i++){
+      result += library[pre[i]] || library[pre[i]] === '' ? library[pre[i]] : pre[i];
     }
+
+
     return result.toLowerCase();
+
   };
 
   transliterate.noConflict = function(){
-    root.transliterate = prev_module;
+    that.transliterate = prev_module;
   };
 
   if( typeof exports !== 'undefined' ) {
@@ -103,7 +111,7 @@
     exports.transliterate = transliterate;
   }
   else {
-    root.transliterate = transliterate;
+    that.transliterate = transliterate;
   }
 
 }).call(this);
