@@ -40,7 +40,7 @@
   ],
   "license": "ISC",
   "main": "./module/index.js",
-  "name": "transliterate-url-cyr-to-latin",
+  "name": "transliterate-cyrillic-text-to-latin-url",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SergeyZaligin/transliterate-cyrillic-text-to-latin-url.git"
@@ -48,5 +48,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.0"
+  "version": "1.0.2"
 }

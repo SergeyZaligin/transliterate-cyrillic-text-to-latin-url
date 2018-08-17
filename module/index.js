@@ -95,7 +95,6 @@
       result += library[pre[i]] || library[pre[i]] === '' ? library[pre[i]] : pre[i];
     }
 
-
     return result.toLowerCase();
 
   };
