@@ -87,11 +87,12 @@
   const transliterate = (str) => {
 
     const string = str.replace(/зг/gi, 'zgh');
+    
     var pre = string.trim();
     let result = '';
     let cnt = pre.length;
 
-    for(let i = 0; i < cnt; i++){
+    for (let i = 0; i < cnt; i++) {
       result += library[pre[i]] || library[pre[i]] === '' ? library[pre[i]] : pre[i];
     }
 
@@ -99,17 +100,19 @@
 
   };
 
-  transliterate.noConflict = function(){
+  transliterate.noConflict = function () {
     that.transliterate = prev_module;
   };
 
-  if( typeof exports !== 'undefined' ) {
-    if( typeof module !== 'undefined' && module.exports ) {
+  if ( typeof exports !== 'undefined' ) {
+
+    if ( typeof module !== 'undefined' && module.exports ) {
       exports = module.exports = transliterate;
     }
+
     exports.transliterate = transliterate;
-  }
-  else {
+
+  } else {
     that.transliterate = transliterate;
   }
 
