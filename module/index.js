@@ -5,6 +5,7 @@
   const that = this;
   const prev_module = that.transliterate;
 
+  // https://yandex.ru/support/nmaps/app_transliteration.html
   const library = {
     'A': 'А',
     'а': 'a',
@@ -14,28 +15,20 @@
     'в':'v',
     'Г':'G',
     'г':'g',
-    'Ґ':'Ģ',
-    'ґ':'ģ',
     'Д':'D',
     'д':'d',
     'Е':'E',
     'е':'e',
     'Ё':'Yo',
     'ё':'yo',
-    'Є':'E',
-    'є':'e',
     'Ж':'Zh',
     'ж':'zh',
     'З':'Z',
     'з':'z',
     'И':'I',
     'и':'i',
-    'І':'I',
-    'і':'i',
-    'Ї':'Yi',
-    'ї':'yi',
-    'Й':'J',
-    'й':'j',
+    'Й':'Y',
+    'й':'y',
     'К':'K',
     'к':'k',
     'Л':'L',
@@ -58,16 +51,16 @@
     'у':'u',
     'Ф':'F',
     'ф':'f',
-    'Х':'H',
-    'х':'h',
-    'Ц':'C',
-    'ц':'c',
+    'Х':'Kh',
+    'х':'kh',
+    'Ц':'Ts',
+    'ц':'ts',
     'Ч':'Ch',
     'ч':'ch',
     'Ш':'Sh',
     'ш':'sh',
-    'Щ':'Shh',
-    'щ':'shh',
+    'Щ':'Sch',
+    'щ':'sch',
     'Ъ':'',
     'ъ':'',
     'Ы':'Y',
@@ -81,14 +74,32 @@
     'Я':'Ya',
     'я':'ya',
     '’':'',
-    ' ': '-'
+    ' ': '-',
+    '?': '',
+    '!': '',
+    '.': '',
+    '/': '',
+    '\\': '',
+    '%': '',
+    '&': '',
+    '@': '',
+    '(': '',
+    ')': '',
+    '_': '',
+    '^': '',
+    '*': '',
+    '#': '',
+    '№': '',
+    '"': '',
+    ':': '',
+    ';': ''
   };
 
-  const transliterate = (str) => {
+  const transliterate = (str, numberInUrl = true) => {
 
     const string = str.replace(/зг/gi, 'zgh');
     
-    var pre = string.trim();
+    const pre = string.trim();
     let result = '';
     let cnt = pre.length;
 
@@ -96,7 +107,9 @@
       result += library[pre[i]] || library[pre[i]] === '' ? library[pre[i]] : pre[i];
     }
 
-    return result.toLowerCase();
+    const finallyResult = numberInUrl ? result.match(/-{0,1}[A-Za-z0-9]+/gi).join('') : result.match(/-{0,1}[A-Za-z]+/gi).join('');
+    
+    return finallyResult.toLowerCase();
 
   };
 
