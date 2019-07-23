@@ -7,7 +7,7 @@
 
   // https://yandex.ru/support/nmaps/app_transliteration.html
   const library = {
-    'A': 'А',
+    'А': 'A',
     'а': 'a',
     'Б': 'B',
     'б': 'b',
